@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { NavigationOptions } from '@ionic/angular/providers/nav-controller';
 
 @Component({
   selector: 'app-step1',
@@ -9,13 +7,19 @@ import { NavigationOptions } from '@ionic/angular/providers/nav-controller';
 })
 export class Step1Component implements OnInit {
 
-  constructor(
-    private navController: NavController) { }
+  public selectedTab;
+
+  constructor() { }
 
   ngOnInit() {}
 
-  next() {
-    this.navController.navigateRoot('step2');
+  segmentChange(event) {
+    alert ('IonChange triggered!!, selected tab >> ' + event.detail.value);
+  }
+
+  changeTabProg() {
+    this.selectedTab = 3;
+    alert ('Selected tab >> ' + this.selectedTab);
   }
 
 }

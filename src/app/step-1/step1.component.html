@@ -8,9 +8,23 @@
 
 <ion-content>
   
-  <div>
-    <p>Content</p>
-    <ion-button (click)="next()">Next</ion-button>
-    
-  </div>
+  <ion-row class="tab_wrap">
+    <ion-segment class="nue" mode="md" [(ngModel)]="selectedTab" (ionChange)="segmentChange($event)" scrollable>
+      <ion-segment-button mode="md" [id]="0" value="0">
+        <ion-label>Segment 1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="md" [id]="1" value="1">
+        <ion-label>Segment 2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="md" [id]="2" value="2">
+        <ion-label>Segment 3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <hr>
+    Change Segment Programatically by changing ngModel value
+    <ion-button (click)="changeTabProg()">
+      Change
+    </ion-button>
+  </ion-row>
+  
 </ion-content>
